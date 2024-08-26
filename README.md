@@ -16,7 +16,7 @@ The purpose of this project is to demonstrate my test automation skills by testi
 4. Sort the videos by selecting the "shortest video" option from the sorting menu.
 5. Click and open the first video in the list after sorting by shortest video.
 6. Scroll down the page on the opened video page, if necessary.
-7. Check and verify if the page contains the text "Berkelium."
+7. Check and verify if the page contains the text "Berkelium.
 
 <!--
 ## Results 📈
