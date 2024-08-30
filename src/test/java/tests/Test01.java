@@ -44,10 +44,10 @@ public class Test01 extends Report {
         ReusableMethods.wait(3);
         tedEx.firstShortestVideo.click();
 
-        extentTest.info("Scroll down the page on the opened video page, if necessary.");
-        ReusableMethods.wait(2);
-        Actions action=new Actions(Driver.getDriver());
-        action.sendKeys(Keys.PAGE_DOWN).perform();
+        //extentTest.info("Scroll down the page on the opened video page, if necessary.");
+        //ReusableMethods.wait(2);
+        //Actions action=new Actions(Driver.getDriver());
+        //action.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.wait(4);
 
         extentTest.pass("Check and verify if the page contains the text \"Berkelium.\n");
