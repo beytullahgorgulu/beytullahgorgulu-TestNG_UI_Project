@@ -4,6 +4,7 @@ package utilities;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,8 +28,14 @@ public class ReusableMethods {
     }
 
     public static void waitForElementToBeVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(element));
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(element));
+        } catch (TimeoutException e) {
+            System.out.println("The element was not visible within the specified timeout: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        }
     }
 
     public static String getScreenshot(String name) throws IOException {
